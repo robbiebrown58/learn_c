@@ -1,0 +1,16 @@
+all: driver
+
+driver: consoleinput.o driver.o calculator.o
+	gcc -std=c99 consoleinput.o driver.o calculator.o -o driver
+
+consoleinput.o: consoleinput.c
+	gcc -std=c99 -pedantic -c -g consoleinput.c
+
+driver.o: driver.c
+	gcc -std=c99 -pedantic -c -g driver.c
+
+calculator.o: calculator.c
+	gcc -std=c99 -pedantic -c -g calculator.c
+
+clean:
+	rm *.out *~ driver *.o *.so
